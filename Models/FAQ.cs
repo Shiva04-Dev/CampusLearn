@@ -21,7 +21,7 @@ namespace CampusLearn.Models
 
         public void UpdateAnswer(string newAnswer)
         {
-            Answer = newAnswer;
+            
         }
     }
 }
