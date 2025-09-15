@@ -1,3 +1,5 @@
+using Azure;
+using CampusLearn.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,9 +14,9 @@ namespace CampusLearn.Models
         public int TopicID { get; set; }
 
         [Required]
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
-        public required string Description { get; set; }
+        public string Description { get; set; }
 
         [Required]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
@@ -28,19 +30,9 @@ namespace CampusLearn.Models
         [ForeignKey("Module")]
         public int ModuleID { get; set; }
 
-        public TutorResponse AddResponse(Tutor tutor, string text)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Resource AddResource(string file)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CloseTopic()
-        {
-
-        }
+        // Methods
+        public Response AddResponse(Tutor tutor, string text) { return null; }
+        public Resource AddResource(string file) { return null; }
+        public void CloseTopic() { }
     }
 }
