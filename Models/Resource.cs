@@ -4,23 +4,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CampusLearn.Models
 {
+    public enum ResourceType { PDF, Video, Audio, Other }
+
     public class Resource
     {
         [Key]
         public int ResourceID { get; set; }
 
         [Required]
-        [MaxLength(200)]
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
         [Required]
-        public Enums.ResourceType Type { get; set; }
+        public ResourceType Type { get; set; }
 
         [Required]
-        public required string FilePath { get; set; }
+        public string FilePath { get; set; }
 
         [Required]
-        public DateTime UploadedDate { get; set; }
+        public DateTime UploadedDate { get; set; } = DateTime.Now;
 
         [ForeignKey("Tutor")]
         public int TutorID { get; set; }
@@ -28,20 +29,8 @@ namespace CampusLearn.Models
         [ForeignKey("Topic")]
         public int TopicID { get; set; }
 
-        public virtual required Tutor Tutor { get; set; }
-        public virtual required Topic Topic { get; set; }
-
-        public byte[] Download()
-        {
-            return System.IO.File.ReadAllBytes(FilePath);
-        }
-
-        public void Delete()
-        {
-            if (System.IO.File.Exists(FilePath))
-            {
-                System.IO.File.Delete(FilePath);
-            }
-        }
+        
+        public object Download() { return null; }
+        public void Delete() { }
     }
 }
