@@ -8,51 +8,28 @@ namespace CampusLearn.Models
 {
     public class Tutor : User
     {
-        [Key]
-        [ForeignKey("User")]
+        [Key, ForeignKey("User")]
         public int TutorID { get; set; }
 
-        public string Bio { get; set; } = string.Empty;
+        public string Bio { get; set; }
 
-        [MaxLength(20)]
-        public string StaffID { get; set; } = string.Empty;
+        [StringLength(20)]
+        public string StaffID { get; set; }
 
-        // Navigation properties
-        public virtual ICollection<TutorExpertise> TutorExpertise { get; set; } = new List<TutorExpertise>();
-        public virtual ICollection<TutorResponse> Responses { get; set; } = new List<TutorResponse>();
-        public virtual ICollection<Resource> UploadedMaterials { get; set; } = new List<Resource>();
-        public virtual ICollection<Message> ReceivedMessages { get; set; } = new List<Message>();
-        public virtual ICollection<Feedback> ReceivedFeedbacks { get; set; } = new List<Feedback>();
-        public virtual ICollection<Escalation> AssignedEscalations { get; set; } = new List<Escalation>();
-
-        // Methods
-        public TutorResponse RespondTopic(Topic topic, string responseText)
+        
+        public Response RespondTopic(Topic topic, string response)
         {
-            return new TutorResponse
-            {
-                Tutor = this,
-                Topic = topic,
-                ResponseText = responseText,
-                ResponseDate = DateTime.Now
-            };
+            return null;
         }
 
-        public Resource UploadMaterial(Topic topic, string filePath, Enums.ResourceType type, string title)
+        public Resource UploadMaterial(Topic topic, string filePath, string type)
         {
-            return new Resource
-            {
-                Tutor = this,
-                Topic = topic,
-                FilePath = filePath,
-                Type = type,
-                Title = title,
-                UploadedDate = DateTime.Now
-            };
+            return null;
         }
 
         public void MarkResolved(Topic topic)
         {
-            topic.CloseTopic();
+         
         }
     }
 }
