@@ -16,19 +16,16 @@ namespace CampusLearn.Models
         public int TutorID { get; set; }
 
         [ForeignKey("Topic")]
-        public int? TopicID { get; set; }
+        public int TopicID { get; set; }
 
         [Required]
-        public required string Content { get; set; }
+        public string Content { get; set; }
 
         [Required]
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         public bool IsRead { get; set; } = false;
 
-        public virtual required Student Student { get; set; }
-        public virtual required Tutor Tutor { get; set; }
-        public virtual required Topic Topic { get; set; }
 
         public void MarkRead()
         {
