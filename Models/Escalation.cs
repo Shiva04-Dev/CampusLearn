@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CampusLearn.Models
 {
+    public enum EscalationStatus { PENDING, ASSIGNED, RESOLVED}
     public class Escalation
     {
         [Key]
@@ -16,26 +17,23 @@ namespace CampusLearn.Models
         public int? TutorID { get; set; }
 
         [Required]
-        public required string QueryText { get; set; }
+        public string QueryText { get; set; }
 
         [Required]
         public DateTime EscalationDate { get; set; } = DateTime.Now;
 
         [Required]
-        public string Status { get; set; } = "PENDING";
+        public EscalationStatus Status { get; set; } = EscalationStatus.PENDING;
 
-        public virtual required Student Student { get; set; }
-        public virtual required Tutor Tutor { get; set; }
 
         public void AssignTutor(Tutor tutor)
         {
-            Tutor = tutor;
-            Status = "ASSIGNED";
+           
         }
 
         public void Resolve()
         {
-            Status = "RESOLVED";
+         
         }
     }
 }
