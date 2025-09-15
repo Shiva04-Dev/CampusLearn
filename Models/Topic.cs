@@ -12,9 +12,9 @@ namespace CampusLearn.Models
         public int TopicID { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         [Required]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
@@ -28,14 +28,14 @@ namespace CampusLearn.Models
         [ForeignKey("Module")]
         public int ModuleID { get; set; }
 
-        public Response AddResponse(Tutor tutor, string text)
+        public TutorResponse AddResponse(Tutor tutor, string text)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public Resource AddResource(string file)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public void CloseTopic()

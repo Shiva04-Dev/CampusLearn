@@ -9,13 +9,13 @@ namespace CampusLearn.Models
         public int UserID { get; set; }
 
         [Required, StringLength(50)]
-        public string UserName { get; set; }
+        public required string UserName { get; set; }
 
         [Required, EmailAddress]
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
         [Required]
-        public string PasswordHash { get; set; }
+        public required string PasswordHash { get; set; }
 
         public virtual void Register(string username, string email, string password)
         {
