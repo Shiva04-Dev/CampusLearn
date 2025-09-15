@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-CampusLearn-197bd0e9-418e-405e-979a-698c426a1eb1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Account1\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Module\" />
+    <Folder Include="Views\Message\" />
+    <Folder Include="Views\Feedback\" />
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\Topic\" />
+    <Folder Include="Views\Tutor\" />
+    <Folder Include="Views\Student1\" />
+    <Folder Include="wwwroot\imgs\" />
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+</Project>
