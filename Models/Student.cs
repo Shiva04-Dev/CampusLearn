@@ -10,7 +10,7 @@ namespace CampusLearn.Models
         public int StudentID { get; set; }
 
         [Required]
-        public required string Program { get; set; }
+        public string Programme { get; set; }
 
         [Range(1, 4)]
         public int YearOfStudy { get; set; }
@@ -20,7 +20,7 @@ namespace CampusLearn.Models
         //Methods
         public Topic CreateTopic(string title, string description, Module module)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void SubscribeTopic(Topic topic)
@@ -28,14 +28,14 @@ namespace CampusLearn.Models
 
         }
 
-        public Message SendMessage(Tutor tutor, string content, Topic? topic)
+        public Message SendMessage(Tutor tutor, string content)
         {
-            throw new NotImplementedException();
+            return null; ;
         }
 
         public Feedback GiveFeedback(Tutor tutor, int rating, string comment)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }
